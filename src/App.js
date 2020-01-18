@@ -10,17 +10,38 @@ export class App extends Component {
     users: [],
     loading: false
   };
+
   async componentDidMount() {
     this.setState({ loading: true });
     const res = await axios.get("https://api.github.com/users");
     this.setState({ users: res.data, loading: false });
   }
+
+  searchUser = async text => {
+    this.setState({ loading: true });
+    const res = await axios.get(
+      `https://api.github.com/search/users?q=${text}`
+    );
+    this.setState({ users: res.data.items, loading: false });
+  };
+
+  clearUsers = () => {
+    this.setState({
+      loading: false,
+      users: []
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <Navbar />
         <div className="container">
-          <Search />
+          <Search
+            searchUsers={this.searchUser}
+            clearUsers={this.clearUsers}
+            showClear={this.state.users.length > 0 ? true : false}
+          />
           <Users users={this.state.users} loading={this.state.loading} />
         </div>
       </div>
