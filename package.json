@@ -1,5 +1,5 @@
 {
-  "name": "dice-app",
+  "name": "github-finder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,5 +31,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halimjr95/GithubFinder.git"
+  },
+  "author": "halim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halimjr95/GithubFinder/issues"
+  },
+  "homepage": "https://github.com/halimjr95/GithubFinder#readme"
 }
